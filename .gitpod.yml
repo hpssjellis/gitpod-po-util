@@ -9,7 +9,7 @@ tasks:
               mkdir /workspace/gitpod-po-util/openthread-all                                                          &&
               touch /workspace/gitpod-po-util/logs/gitpod-install-log.txt                                             &&
               mkdir /home/gitpod/.po-util                            &&
-              touch /home/gitpod/.po-util/config 
+              touch /home/gitpod/.po-util/config     &&
        
 
               echo "Starting .gitpod.yml installation" &>>  /workspace/gitpod-po-util/logs/gitpod-install-log.txt     &&
