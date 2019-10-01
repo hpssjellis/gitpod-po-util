@@ -3,6 +3,11 @@ FROM gitpod/workspace-full:latest
 USER root
 
 RUN apt-get update                                                                                               \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dbus gcc g++ automake           \
+               libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
+               autoconf autoconf-archive  software-properties-common bsdtar                                      \
+               sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
+    && apt-get update                                                   \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
     && po
@@ -40,7 +45,8 @@ RUN mkdir -p /home/gitpod/logs                                                  
 
 # Give back control
 USER root
-
+RUN chown -R gitpod:gitpod /home/gitpod/.po-util
+RUN chmod -R 777 /home/gitpod/.po-util
 
 # Cleaning
 RUN apt-get clean  && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
