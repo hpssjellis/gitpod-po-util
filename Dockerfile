@@ -50,8 +50,7 @@ RUN mkdir -p /home/gitpod/logs                                                  
 
 # Give back control
 USER root
-RUN chown -R gitpod:gitpod /home/gitpod/.po-util
-RUN chmod -R 777 /home/gitpod/.po-util
+
 
 # Cleaning
 RUN apt-get clean  && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
