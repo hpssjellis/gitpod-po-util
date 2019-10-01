@@ -13,9 +13,11 @@ RUN apt-get update                                                              
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
     && po                                                                                                        \
     && chown -R gitpod:gitpod /home/gitpod/.po-util                                                              \
-    && chmod -R 777 /home/gitpod/.po-util
-    
-    
+    && chmod -R 777 /home/gitpod/.po-util                                                                        \
+    && apt-get update                \
+  && dpkg --add-architecture i386    \
+  && apt-get update                  \ 
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libncurses5:i386 libreadline libglib2.0-dev 
     
 # try                lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
 ## NOTE: not installing libreadline and libglib2.0-dev  libncurses5:i386  may cause some issues
