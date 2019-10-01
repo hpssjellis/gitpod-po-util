@@ -10,7 +10,12 @@ RUN apt-get update                                                              
     && apt-get update                                                   \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && po
+    && po                                             \
+    && chown -R gitpod:gitpod /home/gitpod/.po-util   \
+    && chmod -R 777 /home/gitpod/.po-util
+    
+    
+    
 
 ## NOTE: not installing libreadline and libglib2.0-dev may cause some issues
 
