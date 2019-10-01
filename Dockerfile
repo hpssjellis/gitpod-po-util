@@ -7,7 +7,12 @@ RUN apt-get update                                                              
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-    && apt-get update                                                  
+    && apt-get update                                                   \
+    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
+    && /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
+    && po                                             \
+    && chown -R gitpod:gitpod /home/gitpod/.po-util   \
+    && chmod -R 777 /home/gitpod/.po-util
     
     
     
@@ -40,13 +45,6 @@ USER gitpod
 RUN mkdir -p /home/gitpod/logs                                                                            \ 
     && touch /home/gitpod/logs/myDockerlog.txt                                                            \
     && echo "Installation start, made some folders in /home/gitpod" >> /home/gitpod/logs/myDockerlog.txt  \
-     
-    && sudo /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
-    && sudo /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && sudo po                                                               \    
-    && chown -R gitpod:gitpod /home/gitpod/.po-util                          \
-    && chmod -R 755 /home/gitpod/.po-util                                    \
-
     && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
    
 
