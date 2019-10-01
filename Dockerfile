@@ -43,7 +43,9 @@ RUN mkdir -p /home/gitpod/logs                                                  
      
     && sudo /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"  \
     && sudo /bin/bash -c "bash <(curl -sL get.po-util.com)"                  \
-    && sudo po                                                               \
+    && sudo po                                                               \    
+    && chown -R gitpod:gitpod /home/gitpod/.po-util                          \
+    && chmod -R 755 /home/gitpod/.po-util                                    \
 
     && echo "Installation end"                                      >> /home/gitpod/logs/myDockerlog.txt  
    
