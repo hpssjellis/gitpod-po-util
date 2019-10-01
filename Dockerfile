@@ -7,7 +7,7 @@ RUN apt-get update                                                              
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-               gcc-multilib libncurses5:i386                                                                     \
+               gcc-multilib lib32ncurses5                                                                        \
     && apt-get update                                                                                            \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
@@ -17,8 +17,8 @@ RUN apt-get update                                                              
     
     
     
-
-## NOTE: not installing libreadline and libglib2.0-dev may cause some issues
+# try                lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+## NOTE: not installing libreadline and libglib2.0-dev  libncurses5:i386  may cause some issues
 
 # will clean folders last   
     
