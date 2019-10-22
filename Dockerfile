@@ -8,7 +8,6 @@ RUN apt-get update                                                              
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
                gcc-multilib lib32ncurses5                                                                        \
-    && dpkg --add-architecture i386                                                                              \
     && apt-get update                                                                                            \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
@@ -16,9 +15,18 @@ RUN apt-get update                                                              
     && chown -R gitpod:gitpod /home/gitpod/.po-util                                                              \
     && chmod -R 777 /home/gitpod/.po-util                                                                        
  
-  #  && apt-get update                \
+ 
+ 
+ 
+ RUN  dpkg --add-architecture i386  \
+      && apt-get update         \
+      && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+    
+    
+    
+ #  && apt-get update                \
  # && dpkg --add-architecture i386    \
-  #&& apt-get update                  \ 
+ #&& apt-get update                  \ 
  # && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libncurses5:i386 libreadline libglib2.0-dev 
     
 # try                lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
