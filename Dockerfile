@@ -18,9 +18,9 @@ RUN apt-get update                                                              
  
  
  
- RUN  dpkg --add-architecture i386  \
-      && apt-get update         \
-      && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+ #RUN  dpkg --add-architecture i386  \
+#      && apt-get update         \
+ #     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
     
     
     
@@ -47,7 +47,7 @@ RUN apt update && apt install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*  
     
     
-    
+RUN  sudo apt-get install -y --no-install-recommends lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6   
     
     
     
