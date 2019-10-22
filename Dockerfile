@@ -47,7 +47,7 @@ RUN apt update && apt install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*  
     
     
-RUN  sudo apt-get install  lib32z1  lib32bz2-1.0 lib32stdc++6   
+#RUN  sudo apt-get install  lib32z1  lib32bz2-1.0 lib32stdc++6   
     
     
     
