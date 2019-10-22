@@ -8,6 +8,7 @@ RUN apt-get update                                                              
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
                gcc-multilib lib32ncurses5                                                                        \
+    && dpkg --add-architecture i386                                                                              \
     && apt-get update                                                                                            \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
