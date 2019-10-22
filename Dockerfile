@@ -7,7 +7,7 @@ RUN apt-get update                                                              
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-               gcc-multilib                                                                                      \
+               gcc-multilib  libncurses5-dev                                                                     \
     && apt-get update                                                                                            \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
