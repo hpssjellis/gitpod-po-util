@@ -22,9 +22,7 @@ tasks:
               export PATH=${PATH}:/home/gitpod/.linuxbrew/bin                                                         &&
               
               
-              echo "Starting Apache"                   &>>  /workspace/gitpod-po-util/logs/gitpod-install-log.txt     &&   
-              apachectl start                                                                                         &&
-              gp preview $(gp url 8001)                                                                               &&
+              echo "Starting Po"                   &>>  /workspace/gitpod-po-util/logs/gitpod-install-log.txt     &&   
               
               po init argon myProjectName    &&
               cd myProjectName               &&
