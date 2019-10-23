@@ -3,8 +3,8 @@ FROM gitpod/workspace-full:latest
 USER root
 
 RUN dpkg --add-architecture i386
-RUN apt-get update && apt-get install -y lib32z1  libbz2-1.0:i386 lib32stdc++6 libncurses5:i386 
-#lib32ncurses5-dev libncursesw5-dev
+RUN apt-get update && apt-get install -y lib32z1  libbz2-1.0:i386 lib32stdc++6 lib32ncurses5-dev libncursesw5-dev 
+#    libncurses5:i386
 
 
 RUN apt-get update                                                                                               \
