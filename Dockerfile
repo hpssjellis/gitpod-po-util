@@ -2,12 +2,15 @@ FROM gitpod/workspace-full:latest
 
 USER root
 
+RUN dpkg --add-architecture i386
+RUN apt-get update && apt-get install -y lib32z1 lib32ncurses5-dev libncursesw5-dev libbz2-1.0:i386 lib32stdc++6
+
 RUN apt-get update                                                                                               \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends dbus gcc g++ automake           \
                libtool lsb-release make  clang-format-6.0   libdbus-1-dev libboost-dev libreadline-dev           \                                     
                autoconf autoconf-archive  software-properties-common bsdtar                                      \
                sudo curl git gzip python gnupg2 software-properties-common build-essential libarchive-zip-perl   \
-               gcc-multilib  libncurses5-dev    libncursesw5-dev                                                 \
+               gcc-multilib                                                 \
     && apt-get update                                                                                            \
     && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
