@@ -24,6 +24,8 @@ tasks:
               
               echo "Starting Po"                   &>>  /workspace/gitpod-po-util/logs/gitpod-install-log.txt     &&   
               
+              
+              cd /workspace/gitpod-po-util/  &&
               po init argon myProjectName    &&
               cd myProjectName               &&
               po config mesh-develop         &&
