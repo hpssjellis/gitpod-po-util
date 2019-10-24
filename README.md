@@ -7,11 +7,19 @@ https://gitpod.io/#github.com/hpssjellis/gitpod-po-util
 
 
 
-This works
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/6fa23605-35b0-49aa-b48e-b0da4313b626)
+This works, latest snapshot
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/52976b37-ce98-4d38-818f-38a1c36135c3)
+
+In the above snapshot, my Oct 2019 Particle Argon build has already generated the .bin file, however you can't flash from a browser so the file will need to be downloaded to your machine and then install particle-cli and flash from your machine
+
+```
+particle flash --usb myArgonProject-argon.bin
+
+```
 
 
-
+Old generic instructions
 
 ```
 
