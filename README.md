@@ -8,18 +8,7 @@ https://gitpod.io/#github.com/hpssjellis/gitpod-po-util
 
 
 This works
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/7ab627a3-52a5-47f6-b1a1-99af6f906bf5)
-
-
-
-
-trying to get these working
-
-libncurses5-dev libncursesw5-dev
-
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe"
-sudo apt-get update
-sudo apt-get install libncurses5-dev
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/6fa23605-35b0-49aa-b48e-b0da4313b626)
 
 
 
