@@ -4,8 +4,7 @@ USER root
 
 
 
-RUN apt-get update                                                                                               \                                                                                          \
-    && /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
+RUN  /bin/bash -c "bash <(curl -sL https://particle.io/install-cli)"                                           \
     && /bin/bash -c "bash <(curl -sL get.po-util.com)"                                                           \
     && po                                                                                                        \
     && chown -R gitpod:gitpod /home/gitpod/.po-util                                                              \
